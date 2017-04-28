@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "281828466169",
+    "firebase_url": "https://colleaguedatabase.firebaseio.com",
+    "project_id": "colleaguedatabase",
+    "storage_bucket": "colleaguedatabase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:281828466169:android:0e0e82c0aaecc0ef",
+        "android_client_info": {
+          "package_name": "com.example.georgihristov.colleaguedatabase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "281828466169-mnh3bkdjlebdvg9vlkbq94l1oo8btvcp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDe3_-V5MVEc_Ur0pZVxZuWJAeNcC4QDCQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
