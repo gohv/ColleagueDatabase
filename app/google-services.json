@@ -15,6 +15,22 @@
       },
       "oauth_client": [
         {
+          "client_id": "281828466169-oqj4bc2lmmneas43cu3ufhtot3k7bnsd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.georgihristov.colleaguedatabase",
+            "certificate_hash": "2f63c8dee749db3597c8656f71d9ceed0ed5de88"
+          }
+        },
+        {
+          "client_id": "281828466169-jj4flsha6n3m90i14c0g0mrcf6ucpfvk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.georgihristov.colleaguedatabase",
+            "certificate_hash": "06281e564cfcd76f69d8377e5a725e14a085c594"
+          }
+        },
+        {
           "client_id": "281828466169-mnh3bkdjlebdvg9vlkbq94l1oo8btvcp.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,8 +45,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "281828466169-mnh3bkdjlebdvg9vlkbq94l1oo8btvcp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2

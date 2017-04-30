@@ -9,35 +9,62 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
 
+    private List<Colleague> colleagues;
+    private ColleagueAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycleView);
+        final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycleView);
 
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference reference = database.getReference("colleague");
+        colleagues = new ArrayList<>();
 
-        Colleague colleague = new Colleague();
-        colleague.setColleagueName("Georgy");
-        colleague.setColleagueEmailAddress("hristovsotirovgeorgi@gmail.com");
-        colleague.setColleagueSkypeName("georgy_11");
-        colleague.setColleaguePhoneNumber("0883509049");
-        colleague.setColleagueTitle("Level 1 Support");
-        colleague.setColleaguePicture("https://developer.android.com/_static/images/android/touchicon-180.png");
-        List<Colleague> colleagues = new ArrayList<>();
-        ColleagueAdapter adapter = new ColleagueAdapter(colleagues);
-        colleagues.add(colleague);
+        reference.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                Colleague colleague = dataSnapshot.getValue(Colleague.class);
+                colleagues.add(colleague);
+                adapter = new ColleagueAdapter(colleagues);
+                recyclerView.setAdapter(adapter);
+                recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
+            }
 
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
 
+            }
 
-        recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
 
 
 
@@ -54,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.add_colleague:
-                Toast.makeText(this, "Here be dragons", Toast.LENGTH_SHORT).show();
+                addNewColleague();
                 break;
         }
         return true;
