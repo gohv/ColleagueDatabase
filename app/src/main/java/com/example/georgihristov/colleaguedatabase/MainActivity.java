@@ -34,6 +34,10 @@ public class MainActivity extends AppCompatActivity {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference reference = database.getReference("colleague");
         colleagues = new ArrayList<>();
+        
+        if (colleagues.isEmpty()){
+            Toast.makeText(this, "If database does not initialize, please create a new entry", Toast.LENGTH_SHORT).show();
+        }
 
         reference.addChildEventListener(new ChildEventListener() {
             @Override

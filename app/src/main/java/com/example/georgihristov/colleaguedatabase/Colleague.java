@@ -9,14 +9,26 @@ public class Colleague {
     private String colleagueEmailAddress;
 
     public Colleague(String colleagueName,
-                     String colleaguePicture,
                      String colleaguePosition,
                      String colleaguePhoneNumber,
                      String colleagueSkypeName,
                      String colleagueEmailAddress) {
         this.colleagueName = colleagueName;
-        this.colleaguePicture = colleaguePicture;
         this.colleagueTitle = colleaguePosition;
+        this.colleaguePhoneNumber = colleaguePhoneNumber;
+        this.colleagueSkypeName = colleagueSkypeName;
+        this.colleagueEmailAddress = colleagueEmailAddress;
+    }
+
+    public Colleague(String colleagueName,
+                     String colleaguePicture,
+                     String colleagueTitle,
+                     String colleaguePhoneNumber,
+                     String colleagueSkypeName,
+                     String colleagueEmailAddress) {
+        this.colleagueName = colleagueName;
+        this.colleaguePicture = colleaguePicture;
+        this.colleagueTitle = colleagueTitle;
         this.colleaguePhoneNumber = colleaguePhoneNumber;
         this.colleagueSkypeName = colleagueSkypeName;
         this.colleagueEmailAddress = colleagueEmailAddress;
